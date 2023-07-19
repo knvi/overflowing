@@ -37,6 +37,13 @@ func GetStats(userId string) (structs.Stats, error) {
 	if err != nil {
 		return structs.Stats{}, err
 	}
+	// since we don't want to return empty stats, we use defer to close the body after we return the stats
+	defer func() {
+		err := res.Body.Close()
+		if err != nil {
+			fmt.Println(err)
+		}
+	}()
 
 	return structs.Stats{
 		ID:		 userId,
