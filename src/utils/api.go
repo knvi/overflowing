@@ -52,6 +52,8 @@ func GetStats(userId string) (structs.Stats, error) {
 		Gold:	stats.Items[0].BadgeCounts.Gold,
 		Silver:	stats.Items[0].BadgeCounts.Silver,
 		Bronze:	stats.Items[0].BadgeCounts.Bronze,
+		Questions: stats.Items[0].Questions,
+		Answers: stats.Items[0].Answers,
 		ImageUrl: stats.Items[0].ProfileImage,
 	}, nil;
 
@@ -59,5 +61,5 @@ func GetStats(userId string) (structs.Stats, error) {
 
 /// helper function, for parsing the url link
 func getApiUrl(userId string) string {
-	return fmt.Sprintf("https://api.stackexchange.com/2.3/users/%s?order=desc&sort=reputation&site=stackoverflow", userId)
+	return fmt.Sprintf("https://api.stackexchange.com/2.3/users/%s?order=desc&sort=reputation&site=stackoverflow&filter=!6WPIommSM*6B3", userId)
 }
