@@ -24,8 +24,9 @@ type StackStats struct {
 }
 
 type Theme struct {
-	TitleColor string `json:"title_color"`
-	IconColor  string `json:"icon_color"`
-	TextColor  string `json:"text_color"`
-	BgColor    string `json:"bg_color"`
+	Gold      string `json:"gold"`
+	Silver    string `json:"silver"`
+	Bronze    string `json:"bronze"`
+	BgColor   string `json:"bg_color"`
+	TextColor string `json:"text_color"`
 }
