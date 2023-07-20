@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"overflowing/src/structs"
+	"overflowing/structs"
 )
 
 /// this file is responsible for handling the stackoverflow api

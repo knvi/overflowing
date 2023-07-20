@@ -1,7 +1,7 @@
 package main
 
 import (
-	"overflowing/src/routes"
+	"overflowing/routes"
 
 	"github.com/labstack/echo/v4"
 )

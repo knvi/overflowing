@@ -4,7 +4,7 @@ package utils
 
 import (
 	"fmt"
-	"overflowing/src/structs"
+	"overflowing/structs"
 	"time"
 )
 

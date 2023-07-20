@@ -2,8 +2,8 @@ package routes
 
 import (
 	"fmt"
-	"overflowing/src/structs"
-	"overflowing/src/utils"
+	"overflowing/structs"
+	"overflowing/utils"
 
 	"github.com/labstack/echo/v4"
 )
