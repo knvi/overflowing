@@ -33,8 +33,10 @@ func Stats(e echo.Context) error {
 
 	cache := 3600 * 24
 
-	e.Set("Content-Type", "image/svg+xml; charset=utf-8")
-	e.Set("Cache-Control", "public, max-age="+ fmt.Sprintf("%d", cache))
-	e.Set("ContentSecurityPolicy", "default-src 'none'; style-src 'unsafe-inline'; img-src data:;")
+	// set headers
+
+	e.Response().Header().Set("Content-Type", "image/svg+xml; charset=utf-8")
+	e.Response().Header().Set("Cache-Control", "public, max-age="+ fmt.Sprintf("%d", cache))
+	e.Response().Header().Set("ContentSecurityPolicy", "default-src 'none'; style-src 'unsafe-inline'; img-src data:;")
 	return e.String(200, svg)
 }	
