@@ -21,12 +21,12 @@ func GenerateSVG(stats structs.Stats, theme structs.Theme) (svg string, error er
 
 	svg = fmt.Sprintf(`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml" height="200" width="500">
     <foreignObject x="0" y="0" width="500" height="200">
-        <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; width:500px; height:200px; border-radius: 16px; box-sizing: border-box; background-color: rgba(255, 255, 255, 1);">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; width:500px; height:200px; border-radius: 16px; box-sizing: border-box; background-color: rgba(255, 255, 255, 1);">
             <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; gap: 10px; width: 100%%; padding: 16px 16px 14px; border-bottom: 1px rgba(214, 217, 220, 1) solid; box-sizing: border-box;">
                 <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start; gap: 8px; width: 200px; height: 100%%; box-sizing: border-box;">
                     <img width="48" height="48" src="data:image/png;base64,%s" />
                     <div style="display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 2px; width: 144px; height: 100%%; box-sizing: border-box;">
-                        <text xmlns:xhtml="http://www.w3.org/1999/xhtml" style="color: #0C0D0E; font-family: Segoe UI; font-size: 16px; font-style: normal; font-weight: 400; line-height: normal;">%s</text>
+                        <text  style="color: #0C0D0E; font-family: Segoe UI; font-size: 16px; font-style: normal; font-weight: 400; line-height: normal;">%s</text>
                         <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center; gap: 4px; width: 100%%; box-sizing: border-box;"> 
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 17C4.64 17 1 13.36 1 9C1 4.64 4.64 1 9 1C13.36 1 17 4.64 17 9C17 13.36 13.36 17 9 17ZM9 15C12.27 15 15 12.27 15 9C15 5.73 12.27 3 9 3C5.73 3 3 5.73 3 9C3 12.27 5.73 15 9 15ZM8 5H9.01L9 9.36L12.22 11.46L11.62 12.39L8 10V5Z" fill="#6A737C"/>
