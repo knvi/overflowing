@@ -9,6 +9,8 @@ type Stats struct {
 	Bronze     int    `json:"bronze"`
 	Questions  int    `json:"question_count"`
 	Answers    int    `json:"answer_count"`
+	LastSeen   int64  `json:"last_access_date"`
+	ViewCount  int    `json:"view_count"`
 	ImageUrl   string `json:"imageUrl"`
 }
 
@@ -22,8 +24,10 @@ type StackStats struct {
 			Gold   int `json:"gold"`
 			Silver int `json:"silver"`
 		} `json:"badge_counts"`
-		Questions int `json:"question_count"`
-		Answers   int `json:"answer_count"`
+		Questions int   `json:"question_count"`
+		Answers   int   `json:"answer_count"`
+		LastSeen  int64 `json:"last_access_date"`
+		ViewCount int   `json:"view_count"`
 	} `json:"items"`
 }
 

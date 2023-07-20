@@ -8,7 +8,10 @@ import (
 
 func main() {
 	e := echo.New()
+
 	e.GET("/", routes.Hello)
+
 	e.GET("/stats", routes.Stats)
-	e.Logger.Fatal(e.Start(":8080"))
+
+	e.Logger.Fatal(e.Start(":4321"))
 }

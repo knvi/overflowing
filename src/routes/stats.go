@@ -10,7 +10,12 @@ import (
 
 func Stats(e echo.Context) error {
 	userId := e.QueryParam("id")
-	fmt.Sprintf("requesting stats for %s", userId)
+
+	if userId == "" {
+		return e.String(400, "missing id")
+	}
+
+	fmt.Println(fmt.Sprintf("requesting stats for %s", userId))
 
 	stats, err := utils.GetStats(userId)
 
@@ -21,6 +26,10 @@ func Stats(e echo.Context) error {
 	theme := structs.Theme{Gold: "#F0B400", Silver: "#999C9F", Bronze: "#AB8A5F", BgColor: "#2D2D2D", TextColor: "#C4CCBC"}
 
 	svg, err := utils.GenerateSVG(stats, theme);
+
+	if err != nil {
+		return e.String(500, err.Error())
+	}
 
 	e.Set("Content-Type", "image/svg+xml; charset=utf-8")
 
