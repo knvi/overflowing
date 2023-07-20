@@ -31,7 +31,10 @@ func Stats(e echo.Context) error {
 		return e.String(500, err.Error())
 	}
 
-	e.Set("Content-Type", "image/svg+xml; charset=utf-8")
+	cache := 3600 * 24
 
+	e.Set("Content-Type", "image/svg+xml; charset=utf-8")
+	e.Set("Cache-Control", "public, max-age="+ fmt.Sprintf("%d", cache))
+	e.Set("ContentSecurityPolicy", "default-src 'none'; style-src 'unsafe-inline'; img-src data:;")
 	return e.String(200, svg)
 }	
