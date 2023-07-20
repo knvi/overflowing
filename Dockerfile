@@ -6,7 +6,7 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 # Copy all source code (stored in src/ directory)
-COPY . .
+COPY /src/ .
 
 # Build the Go app
 RUN CGO_ENABLED=0 GOOS=linux go build -o /server
